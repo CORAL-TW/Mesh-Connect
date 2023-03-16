@@ -14,10 +14,14 @@ Copy your main Mesh CDB file to `Mesh-Connect/database/` folder
 Please put other CDB files in `Mesh-Connect/database/bullpen`
 
 ## Sample
-### Load the main CDB file
+### Load the main CDB file and Print
 ```python
 from mesh import MeshNetworkManager
-MeshNetworkManager().load()	# load Sample1.json
+
+network_manager = MeshNetworkManager()
+network_manager.load()	# load the 1st profile.json in database folder
+for node in network_manager.network.nodes:
+    print(node.name)
 ```
 
 ### Save
